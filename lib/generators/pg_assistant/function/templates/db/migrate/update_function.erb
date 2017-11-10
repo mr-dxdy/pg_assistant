@@ -1,0 +1,9 @@
+class <%= migration_class_name %> < <%= activerecord_migration_class %>
+  def up
+    connection.execute Rails.root.join('<%= definition.path -%>').read
+  end
+
+  def down
+    connection.execute Rails.root.join('<%= previous_definition.path -%>').read
+  end
+end

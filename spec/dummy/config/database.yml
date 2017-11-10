@@ -1,0 +1,10 @@
+development: &default
+  adapter: postgresql
+  database: dummy_development
+  encoding: unicode
+  username: postgres
+
+
+test:
+  <<: *default
+  database: dummy_test

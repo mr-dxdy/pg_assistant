@@ -1,0 +1,13 @@
+class <%= migration_class_name %> < <%= activerecord_migration_class %>
+  def up
+    connection.execute Rails.root.join('<%= definition.path -%>').read
+  end
+
+  def down
+    # connection.execute <<-SQL
+    #  DROP FUNCTION <%= class_name %>(your arguments);
+    # SQL
+
+    raise ActiveRecord::IrreversibleMigration
+  end
+end

@@ -1,0 +1,17 @@
+Description:
+  Create a new database function for your application. This will create a new
+  function definition file and the accompanying migration.
+
+  If a function of the given name already exists, create a new version of the function
+  and a migration to replace the old version with the new.
+
+Examples:
+    rails generate pg_assistant:function increment
+
+      create: db/functions/increment_v01.sql
+      create: db/functions/20140803191158_create_increment.rb
+
+    rails generate pg_assistant:function increment
+
+      create: db/functions/increment_v02.sql
+      create: db/functions/20140804191158_update_increment_to_version_2.rb
